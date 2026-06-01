@@ -1,0 +1,5 @@
+url: "https://matyas-strnad.github.io" 
+baseurl: ""                      
+
+plugins:
+  - jekyll-sitemap
