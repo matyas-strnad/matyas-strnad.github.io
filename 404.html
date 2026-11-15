@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>404 – Page not found | Matyáš Strnad</title>
+<link rel="preload" href="/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Montserrat";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/montserrat-latin-ext-wght-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Montserrat";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/montserrat-latin-wght-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Montserrat";font-style:italic;font-weight:100 900;font-display:swap;src:url("/fonts/montserrat-latin-ext-wght-italic.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Montserrat";font-style:italic;font-weight:100 900;font-display:swap;src:url("/fonts/montserrat-latin-wght-italic.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{--nav:4.25rem;--bg:#000;--fg:#fff;--dim:rgba(255,255,255,.55);--faint:rgba(255,255,255,.16);--line:rgba(255,255,255,.22);
+--serif:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;--sans:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit;margin:0}
+html{height:100%;background:var(--bg)}
+body{min-height:100%;display:flex;flex-direction:column;background:var(--bg);color:var(--fg);font-family:var(--sans);font-weight:500;line-height:1.7;font-size:1.0625rem;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.wrap{padding:0 clamp(1.25rem,5vw,4rem)}
+h1{font-family:var(--serif);font-weight:700;line-height:1;letter-spacing:-.03em}
+
+nav{position:fixed;inset:0 0 auto;height:calc(var(--nav) + env(safe-area-inset-top,0px));display:flex;justify-content:space-between;align-items:center;padding:env(safe-area-inset-top,0px) clamp(1.25rem,5vw,4rem) 0;background:#000;border-bottom:1px solid var(--faint);z-index:20}
+nav .mark{font-family:var(--serif);font-weight:700;font-size:1.5rem}
+nav ul{display:flex;gap:clamp(1rem,3vw,2.5rem);list-style:none;padding:0;font-size:.95rem}
+nav a{position:relative;padding:.25rem 0}
+nav ul a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:#fff;transform:scaleX(0);transform-origin:left;transition:transform .4s}
+nav ul a:hover::after{transform:scaleX(1)}
+
+.hero{flex:1;min-height:calc(100svh - 6rem);display:flex;flex-direction:column;justify-content:flex-end;padding-top:calc(var(--nav) + 2rem);padding-bottom:clamp(2rem,6vh,4rem);position:relative;overflow:hidden}
+
+
+h1{font-size:clamp(5rem,27vw,26rem);position:relative}
+h1 .ln{display:block;overflow:hidden;padding:.1em 0 .14em;margin:-.1em 0 -.14em}
+h1 .ln>span{display:block;transform:translateY(120%);animation:up 1.3s cubic-bezier(.2,.8,.1,1) forwards}
+h1 .ln:nth-child(2){font-size:.34em}
+h1 .ln:nth-child(2)>span{animation-delay:.2s;padding-left:.5em;font-style:italic}
+@keyframes up{to{transform:none}}
+
+.meta{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid var(--line);color:var(--dim);font-size:.95rem;opacity:0;animation:fade 1.2s .9s forwards;position:relative}
+@keyframes fade{to{opacity:1}}
+.meta p{max-width:36ch}
+.meta code{font:inherit;color:var(--fg);word-break:break-all}
+.actions{display:flex;gap:2rem;flex-wrap:wrap;color:var(--fg)}
+.actions a{position:relative;padding:.25rem 0;font-weight:700}
+.actions a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:#fff;transform:scaleX(1);transform-origin:left;transition:transform .5s cubic-bezier(.2,.8,.1,1)}
+.actions a:hover::after{transform:scaleX(0);transform-origin:right}
+.actions a+a{color:var(--dim)}.actions a+a:hover{color:#fff}
+
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding:2rem 0 2.5rem;border-top:1px solid var(--faint);color:var(--dim);font-size:.9rem}
+
+@media(max-width:560px){nav ul li:nth-child(2){display:none}}
+
+@media(prefers-reduced-motion:reduce){
+h1 .ln>span{animation:none;transform:none}.meta{animation:none;opacity:1}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="mark" href="/" aria-label="Matyáš Strnad, home">MS</a>
+  <ul><li><a href="/#certificates">Certificates</a></li><li><a href="/#expirience">Expirience</a></li><li><a href="/#contact">Contact</a></li></ul>
+</nav>
+
+<main class="wrap hero">
+  <h1 id="num" aria-label="404, page not found">
+    <span class="ln" aria-hidden="true"><span>404</span></span>
+    <span class="ln" aria-hidden="true"><span>Page not found</span></span>
+  </h1>
+</main>
+
+<div class="wrap"><footer><span>© 2026 Matyáš Strnad. All rights reserved.</span></footer></div>
+
+<script>
+(function(){
+  // show the missing path (textContent only, never HTML)
+  var p=location.pathname+location.search;
+  if(p&&p!=='/')document.getElementById('path').textContent=p.length>60?p.slice(0,57)+'…':p;
+})();
+</script>
+</body>
+</html>
