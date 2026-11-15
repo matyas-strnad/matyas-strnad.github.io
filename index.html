@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matyáš Strnad – Product Designer & Developer</title>
+<link rel="preload" href="fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Montserrat";font-style:normal;font-weight:100 900;font-display:swap;src:url("fonts/montserrat-latin-ext-wght-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Montserrat";font-style:normal;font-weight:100 900;font-display:swap;src:url("fonts/montserrat-latin-wght-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Montserrat";font-style:italic;font-weight:100 900;font-display:swap;src:url("fonts/montserrat-latin-ext-wght-italic.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Montserrat";font-style:italic;font-weight:100 900;font-display:swap;src:url("fonts/montserrat-latin-wght-italic.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{--nav:4.25rem;--bg:#000;--fg:#fff;--dim:rgba(255,255,255,.55);--faint:rgba(255,255,255,.16);--line:rgba(255,255,255,.22);
+--serif:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;--sans:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;--space:clamp(5rem,12vh,8rem);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit;margin:0}
+html{scroll-padding-top:calc(var(--nav) + env(safe-area-inset-top,0px));scroll-behavior:smooth;background:var(--bg)}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-weight:500;line-height:1.7;font-size:1.0625rem;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.wrap{padding:0 clamp(1.25rem,5vw,4rem)}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.1;letter-spacing:-.03em}
+
+#bar{position:fixed;top:0;left:0;height:2px;width:100%;background:#fff;transform:scaleX(0);transform-origin:0 50%;z-index:30}
+nav{position:fixed;inset:0 0 auto;height:calc(var(--nav) + env(safe-area-inset-top,0px));display:flex;justify-content:space-between;align-items:center;padding:env(safe-area-inset-top,0px) clamp(1.25rem,5vw,4rem) 0;background:#000;border-bottom:1px solid var(--faint);z-index:20}
+nav .mark{font-family:var(--serif);font-weight:700;font-size:1.5rem}
+nav ul{display:flex;gap:clamp(1rem,3vw,2.5rem);list-style:none;padding:0;font-size:.95rem}
+nav a{position:relative;padding:.25rem 0}
+nav ul a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:#fff;transform:scaleX(0);transform-origin:left;transition:transform .4s}
+nav ul a:hover::after{transform:scaleX(1)}
+@media(max-width:560px){nav ul li:nth-child(2){display:none}}
+
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-top:calc(var(--nav) + 2rem);padding-bottom:clamp(2rem,6vh,4rem);position:relative}
+.hero h1{font-size:clamp(3.5rem,17vw,18rem);line-height:1;will-change:transform,opacity;transform-origin:0 100%}
+.hero h1 .ln{display:block;overflow:hidden;padding:.1em 0 .14em;margin:-.1em 0 -.14em}
+.hero h1 .ln span{display:block;transform:translateY(120%);animation:up 1.3s cubic-bezier(.2,.8,.1,1) forwards}
+.hero h1 .ln:nth-child(2) span{animation-delay:.18s;padding-left:.5em;font-style:italic}
+@keyframes up{to{transform:none}}
+.hero-meta{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid var(--line);color:var(--dim);font-size:.95rem;opacity:0;animation:fade 1.2s .9s forwards}
+@keyframes fade{to{opacity:1}}
+.hero-meta p{max-width:30ch}
+
+/* statement */
+.statement{padding:var(--space) 0}
+.statement p{font-family:var(--serif);font-weight:700;font-size:clamp(1.6rem,4vw,3.5rem);line-height:1.2;letter-spacing:-.025em;max-width:22em}
+.w{opacity:.14;transition:opacity .25s linear}
+
+/* certificates */
+.certificates-intro{padding-bottom:0;display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap}
+.certificates-intro h2{font-size:clamp(2.5rem,8vw,7rem)}
+.certificates-intro p{color:var(--dim);max-width:32ch}
+.rail{position:relative}
+.stick{position:sticky;top:calc(var(--nav) + env(safe-area-inset-top,0px));height:calc(100svh - var(--nav) - env(safe-area-inset-top,0px));display:flex;align-items:center;overflow:hidden}
+.track{display:flex;gap:clamp(1rem,3vw,2.5rem);padding:0 clamp(1.25rem,5vw,4rem);will-change:transform}
+.card{flex:0 0 clamp(18rem,62vw,44rem);display:block}
+.art{aspect-ratio:4/3;border:1px solid var(--line);position:relative;overflow:hidden;background:#000}
+.art svg{position:absolute;inset:0;width:100%;height:100%;transition:transform 1.2s cubic-bezier(.2,.8,.1,1)}
+.card:hover .art svg{transform:scale(1.06)}
+.card h3{font-size:clamp(1.5rem,3vw,2.5rem);margin-top:1.25rem;display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
+.card h3 small{font-family:var(--sans);font-size:.9rem;color:var(--dim);letter-spacing:0}
+.card p{color:var(--dim);max-width:44ch;margin-top:.5rem;font-size:1rem}
+
+/* expirience */
+.cap{padding:var(--space) 0 0}
+.cap h2{font-size:clamp(2.5rem,8vw,7rem);margin-bottom:clamp(2rem,5vh,3.5rem)}
+.row{display:grid;grid-template-columns:1fr 1.4fr;gap:1.5rem 3rem;padding:2rem 0;position:relative;transition:padding-left .5s}
+.row::before{content:"";position:absolute;top:0;left:0;width:100%;height:1px;background:var(--line);transform:scaleX(0);transform-origin:left;transition:transform 1.4s cubic-bezier(.2,.8,.1,1)}
+.row.in::before{transform:scaleX(1)}
+.row:hover{padding-left:1rem}
+.row h3{font-size:clamp(1.5rem,3vw,2.5rem)}
+.row p{color:var(--dim);max-width:52ch}
+@media(max-width:700px){.row{grid-template-columns:1fr}}
+
+/* numbers */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:2rem;padding:var(--space) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts b{display:block;font-family:var(--serif);font-weight:700;font-size:clamp(3rem,7vw,6rem);line-height:1}
+.facts span{color:var(--dim);font-size:.95rem}
+
+/* contact */
+.contact{padding:var(--space) 0 0;text-align:center}
+.contact p.lead{color:var(--dim);margin-bottom:1.5rem}
+.contact a.mail{font-family:var(--serif);font-weight:700;font-size:clamp(1.15rem,4.8vw,4.5rem);line-height:1.1;letter-spacing:-.03em;display:inline-block;position:relative;word-break:break-word}
+.contact a.mail::after{content:"";position:absolute;left:0;bottom:-.05em;width:100%;height:2px;background:#fff;transform:scaleX(0);transform-origin:right;transition:transform .7s cubic-bezier(.2,.8,.1,1)}
+.contact a.mail:hover::after{transform:scaleX(1);transform-origin:left}
+.social{display:flex;justify-content:center;gap:2rem;margin-top:3rem;flex-wrap:wrap}
+.social a{color:var(--dim);transition:color .3s}.social a:hover{color:#fff}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding:2rem 0 2.5rem;margin-top:var(--space);border-top:1px solid var(--faint);color:var(--dim);font-size:.9rem}
+
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+.hero h1 .ln span{animation:none;transform:none}.hero-meta{animation:none;opacity:1}
+.w{opacity:1}.row::before{transform:scaleX(1);transition:none}
+.rail{height:auto}.stick{position:static;height:auto;overflow-x:auto;padding:2rem 0}
+}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<nav>
+  <a class="mark" href="#top" aria-label="Matyáš Strnad, top of page">MS</a>
+  <ul><li><a href="#certificates">Certificates</a></li><li><a href="#expirience">Expirience</a></li><li><a href="#contact">Contact</a></li></ul>
+</nav>
+
+<header class="wrap hero" id="top">
+  <h1 id="name"><span class="ln"><span>Matyáš</span></span><span class="ln"><span>Strnad</span></span></h1>
+  <div class="hero-meta">
+  </div>
+</header>
+
+<section class="wrap statement" aria-label="About">
+  <p id="statement">Woah, you are way too soon here. So far, this is just a temporary website under my domain that will be here until I finish my portfolio, which will replace this.</p>
+</section>
+
+<section id="certificates" aria-label="Certificates">
+  <div class="wrap certificates-intro">
+    <h2>Certificates</h2>
+  </div>
+  <div class="rail" id="rail">
+    <div class="stick">
+      <div class="track" id="track">
+        <a class="card" href="#contact">
+          <div class="art"><svg viewBox="0 0 400 300" fill="none" stroke="#fff" stroke-width="1"><circle cx="200" cy="150" r="30"/><circle cx="200" cy="150" r="60" opacity=".75"/><circle cx="200" cy="150" r="90" opacity=".5"/><circle cx="200" cy="150" r="120" opacity=".3"/><circle cx="200" cy="150" r="150" opacity=".15"/></svg></div>
+          <h3>Placeholder</h3>
+          <p>Placeholder</p>
+        </a>
+        <a class="card" href="#contact">
+          <div class="art"><svg viewBox="0 0 400 300" fill="none" stroke="#fff" stroke-width="1"><path d="M0 220 Q100 100 200 180 T400 90" /><path d="M0 240 Q100 120 200 200 T400 110" opacity=".7"/><path d="M0 260 Q100 140 200 220 T400 130" opacity=".5"/><path d="M0 280 Q100 160 200 240 T400 150" opacity=".3"/><path d="M0 200 Q100 80 200 160 T400 70" opacity=".8"/></svg></div>
+          <h3>Placeholder</h3>
+          <p>Placeholder</p>
+        </a>
+        <a class="card" href="#contact">
+          <div class="art"><svg viewBox="0 0 400 300" fill="#fff"><rect x="60" y="60" width="120" height="180" opacity=".9"/><rect x="200" y="60" width="140" height="80" opacity=".5"/><rect x="200" y="160" width="60" height="80" opacity=".3"/><rect x="280" y="160" width="60" height="80" opacity=".15"/></svg></div>
+          <h3>Placeholder</h3>
+          <p>Placeholder</p>
+        </a>
+        <a class="card" href="#contact">
+          <div class="art"><svg viewBox="0 0 400 300" fill="none" stroke="#fff" stroke-width="1"><g id="g"><path d="M40 40H360M40 80H360M40 120H360M40 160H360M40 200H360M40 240H360" opacity=".25"/><path d="M80 20V280M140 20V280M200 20V280M260 20V280M320 20V280" opacity=".25"/></g><polyline points="40,220 110,170 170,190 240,100 320,120 360,60" stroke-width="2"/></svg></div>
+          <h3>Placeholder</h3>
+          <p>Placeholder</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap cap" id="expirience" aria-label="Expirience">
+  <h2>Expirience</h2>
+  <div class="row"><h3>Placeholder</h3><p>Placeholder</p></div>
+  <div class="row"><h3>Placeholder</h3><p>Placeholder</p></div>
+  <div class="row"><h3>Placeholder</h3><p>Placeholder</p></div>
+  <div class="row"><h3>Placeholder</h3><p>Placeholder</p></div>
+</section>
+
+<section class="wrap" aria-label="Facts">
+  <div class="facts">
+    <div><b data-n="9">0</b><span>Placeholder</span></div>
+    <div><b data-n="99">0</b><span>Placeholder</span></div>
+    <div><b data-n="999">0</b><span>Placeholder</span></div>
+  </div>
+</section>
+
+<section class="wrap contact" id="contact">
+  <p class="lead">Let's work together!</p>
+  <a class="mail" href="mailto:hello@matyas-strnad.cz">hello@matyas-strnad.cz</a>
+  <footer><span>© 2026 Matyáš Strnad. All rights reserved.</span></footer>
+</section>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var bar=document.getElementById('bar'),name=document.getElementById('name'),
+      st=document.getElementById('statement'),rail=document.getElementById('rail'),track=document.getElementById('track');
+  // split statement into words
+  var words=st.textContent.trim().split(/\s+/);
+  st.innerHTML=words.map(function(w){return '<span class="w">'+w+'</span> '}).join('');
+  var ws=st.querySelectorAll('.w');
+  var clamp=function(v,a,b){return Math.min(b,Math.max(a,v))};
+  var ticking=false,dist=0,navH=0;
+  var nav=document.querySelector('nav'),stick=rail.querySelector('.stick');
+  function measure(){
+    navH=nav.offsetHeight;
+    dist=Math.max(0,track.scrollWidth-innerWidth);
+    if(!reduce)rail.style.height=(stick.offsetHeight+dist)+'px';
+  }
+  function frame(){
+    ticking=false;
+    var y=scrollY,vh=innerHeight,max=document.documentElement.scrollHeight-vh;
+    bar.style.transform='scaleX('+(max>0?y/max:0)+')';
+    if(reduce)return;
+    // hero name drifts and fades
+    var h=clamp(y/(vh*.8),0,1);
+    name.style.transform='translateY('+(-h*12)+'vh) scale('+(1+h*.12)+')';
+    name.style.opacity=1-h*.9;
+    // statement words brighten with scroll
+    var r=st.getBoundingClientRect(),p=clamp((vh*.85-r.top)/(r.height+vh*.35),0,1)*ws.length;
+    for(var i=0;i<ws.length;i++){ws[i].style.opacity=clamp(.14+(p-i)*.86,.14,1)}
+    // pinned horizontal scroll
+    var rr=rail.getBoundingClientRect(),prog=clamp((navH-rr.top)/Math.max(dist,1),0,1);
+    track.style.transform='translate3d('+(-prog*dist)+'px,0,0)';
+  }
+  function req(){if(!ticking){ticking=true;requestAnimationFrame(frame)}}
+  addEventListener('scroll',req,{passive:true});addEventListener('resize',function(){measure();req()});measure();frame();addEventListener('load',function(){measure();req()});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){measure();req()});
+
+  // line draw for rows
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.3});
+  document.querySelectorAll('.row').forEach(function(r){io.observe(r)});
+
+  // count-up numbers
+  var co=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting)return;co.unobserve(e.target);
+    var el=e.target,n=+el.dataset.n,t0=performance.now();
+    if(reduce){el.textContent=n;return}
+    (function step(t){var k=clamp((t-t0)/1600,0,1);el.textContent=Math.round(n*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(step)})(t0);
+  })},{threshold:.6});
+  document.querySelectorAll('[data-n]').forEach(function(el){if(reduce)el.textContent=el.dataset.n;co.observe(el)});
+})();
+</script>
+</body>
+</html>
