@@ -1,0 +1,8 @@
+url: "https://matyas-strnad.cz"
+baseurl: ""
+
+plugins:
+  - jekyll-sitemap
+
+exclude:
+  - README.md
