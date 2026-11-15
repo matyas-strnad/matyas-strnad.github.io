@@ -1,3 +1,5 @@
+# matyas-strnad.cz
+
 <!--
   _   _      _ _                        _ 
 
@@ -9,4 +11,4 @@
 
  You have officialy traced the domain back to the source.
 
- Spoiler alert: there is no .env file in here.
+ Spoiler alert: there are no api keys in here.
